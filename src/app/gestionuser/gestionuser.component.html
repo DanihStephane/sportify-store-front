@@ -1,0 +1,96 @@
+<body>
+<div class="dashboard">
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      Admin Dashboard
+    </div>
+    <nav class="sidebar-menu">
+      <a routerLink="/gestionuser" class="active">
+        <i class="fas fa-users"></i> Gestion des Utilisateurs
+      </a>
+      <a routerLink="/gestionuser">
+        <i class="fas fa-chart-pie"></i> Gestion de catalogue
+      </a>
+      <a routerLink="/gestionuser">
+        <i class="fas fa-chart-pie"></i> Gestion des commandes
+      </a>
+      <a routerLink="/gestionuser">
+        <i class="fas fa-chart-pie"></i> Gestion des fournisseurs
+      </a>
+      <a routerLink="/gestionuser">
+        <i class="fas fa-chart-pie"></i> Gestion de stock
+      </a>
+      <a routerLink="/gestionuser">
+        <i class="fas fa-chart-pie"></i> Statistiques
+      </a>
+      <a routerLink="/gestionuser">
+        <i class="fas fa-cog"></i> Paramètres
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a routerLink="/loginadmin">
+        <button class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i> Déconnexion
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <main class="main-content">
+    <header class="header">
+      <h1>Gestion des Utilisateurs</h1>
+      <button class="add-user-btn">
+        <i class="fas fa-plus"></i> Ajouter un Utilisateur
+      </button>
+    </header>
+
+    <div class="user-table">
+      <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Rôle</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>John Doe</td>
+          <td>john.doe.com</td>
+          <td>Administrateur</td>
+          <td class="action-buttons">
+            <button class="edit-btn">
+              <i class="fas fa-edit"></i> Modifier
+            </button>
+            <button class="delete-btn">
+              <i class="fas fa-trash"></i> Supprimer
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jane Smith</td>
+          <td>jane.smith.com</td>
+          <td>Utilisateur</td>
+          <td class="action-buttons">
+            <button class="edit-btn">
+              <i class="fas fa-edit"></i> Modifier
+            </button>
+            <button class="delete-btn">
+              <i class="fas fa-trash"></i> Supprimer
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  © 2024 Admin Dashboard. Tous droits réservés.
+</footer>
+</body>

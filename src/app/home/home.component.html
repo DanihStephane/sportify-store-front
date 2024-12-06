@@ -1,0 +1,122 @@
+<body>
+<!-- Header -->
+<header class="header">
+  <div class="logo"></div>
+  <nav class="nav">
+    <a routerLink="/">Accueil</a>
+    <a routerLink="/">Produits</a>
+    <a routerLink="/">Contact</a>
+  </nav>
+  <div class="header-right">
+    <a routerLink="/cart">
+      <div class="cart-icon">
+        🛒
+        <span class="cart-notification">3</span>
+      </div>
+    </a>
+
+    Panier
+
+
+    <a routerLink="/user">
+      <div class="user-avatar">
+      </div>
+    </a>
+    Bonjour !
+    <a routerLink="/login" *ngIf="!user">
+      Se connecter
+    </a>
+    <div *ngIf="user">
+      <p>{{ user.firstName}} {{ user.lastName }}</p>
+      <button (click)="logout()">Déconnexion</button>
+    </div>
+  </div>
+</header>
+
+<!-- Contenu Principal -->
+<main class="main-content">
+  <!-- Barre de Recherche -->
+  <div class="search-container">
+    <input
+      type="text"
+      placeholder="Rechercher des produits..."
+      [(ngModel)]="searchTerms"
+      (ngModelChange)="onSearchTermsChange()"
+      class="search-bar"
+    >
+  </div>
+
+  <!-- Filtres de Catégorie -->
+  <div class="category-filters" *ngIf="categories.length > 0">
+    <button class="filter-btn" data-id="{{category.id}}" *ngFor="let category of categories">{{category.name}}</button>
+  </div>
+  <div class="product-grid" *ngIf="produits.length > 0">
+    <!-- Carte Produit 1 -->
+    <div class="product-card" *ngFor="let produit of produits">
+      <div class="discount-badge">-20%</div>
+      <img src="https://via.placeholder.com/300x250" alt="Produit" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">{{ produit.name }}</h3>
+        <p class="product-description">{{ produit.description }}</p>
+        <div class="product-footer">
+          <div>
+            <span class="price">{{ produit.price }}€</span>
+            <span class="original-price">{{ produit.price }}€</span>
+          </div>
+          <button class="add-to-cart">Ajouter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <button
+      (click)="changePage(currentPage - 1)"
+      [disabled]="currentPage === 1"
+    >
+      Précédent
+    </button>
+
+    <span>Page {{ currentPage }} / {{ totalPages }}</span>
+
+    <button
+      (click)="changePage(currentPage + 1)"
+      [disabled]="currentPage === totalPages"
+    >
+      Suivant
+    </button>
+  </div>
+
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-section">
+    <h4>À Propos</h4>
+    <p>Boutique en ligne proposant les dernières tendances technologiques et mode.</p>
+  </div>
+  <div class="footer-section">
+    <h4>Liens Rapides</h4>
+    <a href="#">Accueil</a>
+    <a href="#">Produits</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="footer-section">
+    <h4>Contactez-nous</h4>
+    <p>Email: test</p>
+    <p>Tél: 01 23 45 67 89</p>
+  </div>
+  <div class="footer-section">
+    <h4>Suivez-nous</h4>
+    <div class="social-icons">
+      <span>FB</span>
+      <span>TW</span>
+      <span>IG</span>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2024 Boutique Moderne. Tous droits réservés.
+  </div>
+</footer>
+</body>

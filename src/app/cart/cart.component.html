@@ -1,0 +1,144 @@
+<body>
+<!-- Header (conservé de la version précédente) -->
+<header class="header">
+  <div class="logo"></div>
+  <nav class="nav">
+    <a routerLink="/">Accueil</a>
+    <a routerLink="/">Produits</a>
+    <a routerLink="/">Contact</a>
+  </nav>
+  <div class="header-right">
+    <a routerLink="/cart">
+      <div class="cart-icon">
+        🛒
+        <span class="cart-notification">3</span>
+      </div>
+    </a>
+
+    Panier
+
+
+    <a routerLink="/user">
+      <div class="user-avatar">
+      </div>
+    </a>
+    Bonjour !
+    <div *ngIf="user">
+      <p>{{ user.firstName}} {{ user.lastName }}</p>
+      <button (click)="logout()">Déconnexion</button>
+    </div>
+  </div>
+</header>
+
+<!-- Contenu Principal du Panier -->
+<div class="cart-container">
+  <div class="cart-items">
+    <h2>Votre Panier (3 articles)</h2>
+
+    <!-- Article 1 -->
+    <div class="cart-item">
+      <img src="https://via.placeholder.com/150" alt="Écouteurs Sans Fil" class="cart-item-image">
+      <div class="cart-item-details">
+        <h3 class="cart-item-title">Good-natured Training Compression Shirt</h3>
+        <p class="cart-item-description">Tum varius necessitatibus similique. Deleniti acquiro artificiose apparatus acquiro clamo voluntarius. Annus laboriosam aqua argentum vere uter.</p>
+        <div class="cart-item-quantity">
+          <button class="quantity-btn">-</button>
+          <span>1</span>
+          <button class="quantity-btn">+</button>
+        </div>
+      </div>
+      <span class="cart-item-price">89,99€</span>
+      <span class="remove-item">🗑️</span>
+    </div>
+
+    <!-- Article 2 -->
+    <div class="cart-item">
+      <img src="https://via.placeholder.com/150" alt="Montre Intelligente" class="cart-item-image">
+      <div class="cart-item-details">
+        <h3 class="cart-item-title">Near Cycling Helmet</h3>
+        <p class="cart-item-description">Vitae viriliter vos tui thorax totam. Vitae cruciamentum odit compono labore denego catena agnitio sperno artificiose. Animus sint aqua suadeo nostrum.</p>
+        <div class="cart-item-quantity">
+          <button class="quantity-btn">-</button>
+          <span>1</span>
+          <button class="quantity-btn">+</button>
+        </div>
+      </div>
+      <span class="cart-item-price">129,99€</span>
+      <span class="remove-item">🗑️</span>
+    </div>
+
+    <!-- Article 3 -->
+    <div class="cart-item">
+      <img src="https://via.placeholder.com/150" alt="Enceinte Portable" class="cart-item-image">
+      <div class="cart-item-details">
+        <h3 class="cart-item-title">Sturdy Basketball Shoes</h3>
+        <p class="cart-item-description">Delibero delectatio talis. Strues canto tergo vestigium colligo trucido altus ipsum tepesco. Decerno artificiose vallum atque adimpleo adeo cuius.</p>
+        <div class="cart-item-quantity">
+          <button class="quantity-btn">-</button>
+          <span>1</span>
+          <button class="quantity-btn">+</button>
+        </div>
+      </div>
+      <span class="cart-item-price">59,99€</span>
+      <span class="remove-item">🗑️</span>
+    </div>
+  </div>
+
+  <!-- Résumé du Panier -->
+  <div class="cart-summary">
+    <h3 class="summary-title">Résumé de la Commande</h3>
+
+    <div class="summary-details">
+      <span>Sous-total</span>
+      <span>279,97€</span>
+    </div>
+
+    <div class="summary-details">
+      <span>Livraison</span>
+      <span>Gratuit</span>
+    </div>
+
+    <div class="summary-details">
+      <span>Réduction</span>
+      <span>-20,00€</span>
+    </div>
+
+    <div class="summary-details summary-total">
+      <span>Total</span>
+      <span>259,97€</span>
+    </div>
+
+    <button class="checkout-btn">Procéder au Paiement</button>
+  </div>
+</div>
+
+<!-- Footer (conservé de la version précédente) -->
+<footer class="footer">
+  <div class="footer-section">
+    <h4>À Propos</h4>
+    <p>Boutique en ligne proposant les dernières tendances technologiques et mode.</p>
+  </div>
+  <div class="footer-section">
+    <h4>Liens Rapides</h4>
+    <a href="#">Accueil</a>
+    <a href="#">Produits</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="footer-section">
+    <h4>Contactez-nous</h4>
+    <p>Email: test</p>
+    <p>Tél: 01 23 45 67 89</p>
+  </div>
+  <div class="footer-section">
+    <h4>Suivez-nous</h4>
+    <div class="social-icons">
+      <span>FB</span>
+      <span>TW</span>
+      <span>IG</span>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2024 Boutique Moderne. Tous droits réservés.
+  </div>
+</footer>
+</body>

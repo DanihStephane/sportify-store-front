@@ -1,0 +1,37 @@
+<body>
+  <div class="auth-container" id="login">
+    <h2 class="auth-title">Connexion SportsMaster <a routerLink="/loginadmin">🛡️BACK OFFICE🛠️ </a> <a routerLink="/home">Accéder au site directement </a></h2>
+    <form (ngSubmit)="onLogin()">
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input placeholder="Nom d'utilisateur"
+               type="email"
+               [(ngModel)]="email"
+               name="email"
+               required
+        >
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input placeholder="Mot de passe"
+               type="password"
+               [(ngModel)]="password"
+               name="password"
+               required
+        >
+      </div>
+      <div class="remember-forgot">
+        <label class="remember-me">
+          <input type="checkbox">
+          Se souvenir de moi
+        </label>
+        <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+      </div>
+      <button type="submit" class="auth-btn">Se connecter</button>
+      <a routerLink="/signup" class="auth-link">Pas de compte ? Inscrivez-vous</a>
+    </form>
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+  </div>
+</body>

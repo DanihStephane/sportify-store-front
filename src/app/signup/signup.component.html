@@ -1,0 +1,49 @@
+<body>
+<div class="auth-container" id="signup">
+  <h2 class="auth-title">Inscription SportsMaster</h2>
+  <form (ngSubmit)="onRegister()">
+    <div class="input-group">
+      <i class="fas fa-envelope"></i>
+      <input
+        type="email"
+        [(ngModel)]="registerData.email"
+        name="email"
+        placeholder="Email de l'utilisateur..."
+        required
+      >
+    </div>
+    <div class="input-group">
+      <i class="fas fa-user"></i>
+      <select
+        [(ngModel)]="registerData.role"
+        name="role"
+        required
+      >
+        <option value="admin">Admin</option>
+        <option value="user">Utilisateur</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <i class="fas fa-lock"></i>
+      <input
+        type="password"
+        [(ngModel)]="registerData.password"
+        name="password"
+        placeholder="Mot de passe..."
+        required
+      >
+    </div>
+    <div class="input-group">
+      <i class="fas fa-lock"></i>
+      <input type="password" id="confirm-password" placeholder="Confirmez le mot de passe" required>
+    </div>
+    <button type="submit" class="auth-btn">S'inscrire</button>
+    <p class="auth-link">
+      Déjà inscrit ? <a routerLink="/login">Connectez-vous ici</a>
+    </p>
+  </form>
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+</div>
+</body>
